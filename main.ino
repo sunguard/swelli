@@ -11,7 +11,7 @@ void setup()
 	Serial.print("STARTING ARDUINO SERIAL");
 
 	motor.attach(10);
-	motor.adjust(100);
+	motor.adjust(0);
 }
 
 void loop()
@@ -32,10 +32,13 @@ void firstAction(){
 	Serial.print("First Action Called___ : ");
 	Serial.println(count);
 
+	motor.move("easeInOutCubic", 500, motor.current(), 200);
+
+	for(int i = 0; i < 4; i++){
+	}
+	motor.move("easeInOutCubic", 500, 200, 50);
 	motor.move("easeInOutCubic", 1000, 50, 200);
-	motor.move("easeInOutCubic", 1000, 200, 50);
-	motor.move("easeInOutCubic", 1000, 50, 200);
-	motor.move("easeInOutCubic", 1000, 200, 50);
+	motor.move("easeInOutCubic", 2000, 200, 100);
 	motor.adjust(0);
 }
 
