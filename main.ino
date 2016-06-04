@@ -10,8 +10,8 @@ void setup()
 	Serial.begin(9600);
 	Serial.print("STARTING ARDUINO SERIAL");
 
-	motor.attach(9);
-	motor.adjust(0);
+	motor.attach(10);
+	motor.adjust(100);
 }
 
 void loop()
@@ -21,7 +21,6 @@ void loop()
 	sensor.thirdAction = thirdAction;
 
 	sensor.binder();
-
 }
 
 //void move(String ease, float dur, float delta)

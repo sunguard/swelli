@@ -13,6 +13,7 @@ public:
 		if(degree >= 1){
 			write(degree - 1);
 		}
+
 		delay(300);
 		write(degree);
 	}
