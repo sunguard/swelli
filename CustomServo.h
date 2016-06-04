@@ -10,16 +10,16 @@ public:
 	}
 
 	int current(){
-		return map(read(), 12, 180, 0, 200);
+		return map(read(), 10, 180, 0, 200);
 	}
 
 	void adjust(float pos){
-		int degree = map(pos, 0, 200, 12, 180);
+		int degree = map(pos, 0, 200, 10, 180);
 
 		_pos = pos;
 
-		if(degree >= 1){
-			write(degree - 1);
+		if(degree >= 5){
+			write(degree - 5);
 		}
 
 		delay(300);
@@ -46,7 +46,7 @@ public:
 					c = 0;
 				}
 
-				degree = map(c, 0, 200, 12, 180);
+				degree = map(c, 0, 200, 10, 180);
 
 				write(degree);
 			}else{

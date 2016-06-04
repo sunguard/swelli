@@ -32,13 +32,18 @@ void firstAction(){
 	Serial.print("First Action Called___ : ");
 	Serial.println(count);
 
-	motor.move("easeInOutCubic", 500, motor.current(), 200);
+	int time = 1750;
+	int top = 200;
+	int bottom = 10;
 
-	for(int i = 0; i < 4; i++){
-	}
-	motor.move("easeInOutCubic", 500, 200, 50);
-	motor.move("easeInOutCubic", 1000, 50, 200);
-	motor.move("easeInOutCubic", 2000, 200, 100);
+	motor.move("easeInOutCubic", time, motor.current(), top);
+
+	//for(int i = 0; i < 2; i++){
+		motor.move("easeInOutCubic", time, top, bottom);
+		motor.move("easeInOutCubic", time, bottom, top);
+	//}
+
+	motor.move("easeInOutCubic", time, top, bottom);
 	motor.adjust(0);
 }
 

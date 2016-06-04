@@ -66,6 +66,7 @@ private:
 		static boolean pressed = false;
 
 		val = analogRead(pin);
+		Serial.println(val);
 
 		// sensing motions
 		if(!pressed){
