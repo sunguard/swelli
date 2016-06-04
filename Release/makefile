@@ -71,31 +71,31 @@ all: swelli
 swelli: $(FLASH_IMAGE)
 	@echo 'Building target: $@'
 	@echo 'Printing size:'
-	"C:\Users\Jonghyuk\eclipse\cpp-mars\eclipse\arduinoPlugin\tools\arduino\avr-gcc\4.8.1-arduino5/bin/avr-size" -A "C:/Users/Jonghyuk/workspace/swelli/Release/swelli.elf"
+	"/Users/saeyoung/eclipse/cpp-mars/Eclipse.app/Contents/MacOS/arduinoPlugin/tools/arduino/avr-gcc/4.8.1-arduino5/bin/avr-size" -A "/Users/saeyoung/Documents/workspace/swelli/Release/swelli.elf"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 arduino.ar: $(AR_OBJ)
 	@echo 'Starting archiver'
-	"C:\Users\Jonghyuk\eclipse\cpp-mars\eclipse\arduinoPlugin\tools\arduino\avr-gcc\4.8.1-arduino5/bin/avr-ar" rcs  "C:/Users/Jonghyuk/workspace/swelli/Release/arduino.ar"    arduino.ar $(AR_OBJ)
+	"/Users/saeyoung/eclipse/cpp-mars/Eclipse.app/Contents/MacOS/arduinoPlugin/tools/arduino/avr-gcc/4.8.1-arduino5/bin/avr-ar" rcs  "/Users/saeyoung/Documents/workspace/swelli/Release/arduino.ar"    arduino.ar $(AR_OBJ)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 swelli.elf: $(LINK_OBJ) $(AR)
 	@echo 'Starting combiner'
-	"C:\Users\Jonghyuk\eclipse\cpp-mars\eclipse\arduinoPlugin\tools\arduino\avr-gcc\4.8.1-arduino5/bin/avr-gcc" -Os -Wl,--gc-sections -mmcu=atmega328p  -o "C:/Users/Jonghyuk/workspace/swelli/Release/swelli.elf"   $(LINK_OBJ) $(AR)    "-LC:/Users/Jonghyuk/workspace/swelli/Release" -lm
+	"/Users/saeyoung/eclipse/cpp-mars/Eclipse.app/Contents/MacOS/arduinoPlugin/tools/arduino/avr-gcc/4.8.1-arduino5/bin/avr-gcc" -Os -Wl,--gc-sections -mmcu=atmega328p  -o "/Users/saeyoung/Documents/workspace/swelli/Release/swelli.elf"   $(LINK_OBJ) $(AR)    "-L/Users/saeyoung/Documents/workspace/swelli/Release" -lm
 	@echo 'Finished building: $@'
 	@echo ' '
 
 swelli.eep: $(ELF)
 	@echo 'Create eeprom image'
-	"C:\Users\Jonghyuk\eclipse\cpp-mars\eclipse\arduinoPlugin\tools\arduino\avr-gcc\4.8.1-arduino5/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0  "C:/Users/Jonghyuk/workspace/swelli/Release/swelli.elf" "C:/Users/Jonghyuk/workspace/swelli/Release/swelli.eep"
+	"/Users/saeyoung/eclipse/cpp-mars/Eclipse.app/Contents/MacOS/arduinoPlugin/tools/arduino/avr-gcc/4.8.1-arduino5/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0  "/Users/saeyoung/Documents/workspace/swelli/Release/swelli.elf" "/Users/saeyoung/Documents/workspace/swelli/Release/swelli.eep"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 swelli.hex: $(EEP)
 	@echo 'Create Flash image (ihex format)'
-	"C:\Users\Jonghyuk\eclipse\cpp-mars\eclipse\arduinoPlugin\tools\arduino\avr-gcc\4.8.1-arduino5/bin/avr-objcopy" -O ihex -R .eeprom  "C:/Users/Jonghyuk/workspace/swelli/Release/swelli.elf" "C:/Users/Jonghyuk/workspace/swelli/Release/swelli.hex"
+	"/Users/saeyoung/eclipse/cpp-mars/Eclipse.app/Contents/MacOS/arduinoPlugin/tools/arduino/avr-gcc/4.8.1-arduino5/bin/avr-objcopy" -O ihex -R .eeprom  "/Users/saeyoung/Documents/workspace/swelli/Release/swelli.elf" "/Users/saeyoung/Documents/workspace/swelli/Release/swelli.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
