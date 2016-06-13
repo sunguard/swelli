@@ -34,17 +34,17 @@
 		<link>
 			<name>core/core</name>
 			<type>2</type>
-			<location>C:/Users/jonghyuk/eclipse/cpp-mars/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.11/cores/arduino</location>
+			<location>C:/Users/Jonghyuk/eclipse/cpp-mars/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.11/cores/arduino</location>
 		</link>
 		<link>
 			<name>core/variant</name>
 			<type>2</type>
-			<location>C:/Users/jonghyuk/eclipse/cpp-mars/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.11/variants/standard</location>
+			<location>C:/Users/Jonghyuk/eclipse/cpp-mars/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.11/variants/standard</location>
 		</link>
 		<link>
 			<name>libraries/Servo</name>
 			<type>2</type>
-			<location>C:/Users/jonghyuk/eclipse/cpp-mars/eclipse/arduinoPlugin/libraries/Servo/1.1.1</location>
+			<location>C:/Users/Jonghyuk/eclipse/cpp-mars/eclipse/arduinoPlugin/libraries/Servo/1.1.1</location>
 		</link>
 	</linkedResources>
 </projectDescription>
