@@ -16,6 +16,7 @@ public:
 	int checker(){
 		static unsigned long s_timestamp = 0;
 		static short count = 0;
+		static short test = 0;
 
 		short output = 0;
 		unsigned long c_timestamp = millis();
